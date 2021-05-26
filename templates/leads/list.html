@@ -1,0 +1,24 @@
+{% extends "leads/base.html" %}
+
+{% block content %}
+
+    <h1>This is a list of our leads...</h1>
+
+    <a href="{% url 'leads:lead_create' %}">Create</a>
+
+    <hr>
+
+    <ul>
+        {% if leads %}
+            {% for lead in leads %}
+                <li>
+                    <a href="{% url 'leads:lead_detail' pk=lead.id %}">{{lead.first_name}} {{lead.last_name}}, Age: {{lead.age}}</a>
+                </li>
+            {% endfor %}
+        {% else %}
+            <li>No leads available for now...</li>
+
+        {% endif %}
+    </ul>
+
+{% endblock %}
