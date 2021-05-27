@@ -134,3 +134,6 @@ AUTH_USER_MODEL = "leads.User"
 
 # Configuring the Email Backend
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Login redirect url
+LOGIN_REDIRECT_URL = "/leads"
